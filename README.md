@@ -1,7 +1,8 @@
 PhoneBook
 =========
 
-	LDAP phonebook using metro-like theming. <br>
+	LDAP phonebook using metro-like theming. 
+	Compatible with IE,Chrome,Firefox and mobile browsers.
 	The Code is pretty disgusting, but whatever.
 
 
