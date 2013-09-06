@@ -7,7 +7,7 @@ PhoneBook
 	
 	And yes, the blocks are animated.
 	
-![screenshot](https://raw.github.com/rjdewberry/PhoneBook/raw/master/images/phonebook-ss.jpg)
+![screenshot](https://raw.github.com/rjdewberry/PhoneBook/master/images/phonebook-ss.jpg)
 
 
 INSTALLATION
