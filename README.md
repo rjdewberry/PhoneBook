@@ -1,7 +1,7 @@
 PhoneBook
 =========
 
-LDAP phonebook using metro-like theming
+LDAP phonebook using metro-like theming. The Code is pretty disgusting, but whatever.
 
 
 INSTALLATION
