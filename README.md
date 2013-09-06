@@ -6,7 +6,10 @@ PhoneBook
 	The Code is pretty disgusting, but whatever.
 	
 	And yes, the blocks are animated.
-	
+
+
+Screenshot
+==========	
 ![screenshot](https://raw.github.com/rjdewberry/PhoneBook/master/images/phonebook-ss.jpg)
 
 
@@ -14,3 +17,4 @@ INSTALLATION
 ============
 	copy the files to a web server with php + php-ldap installed
 	edit getnumber.php to enter your LDAP credentials and binding
+
