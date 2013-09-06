@@ -7,7 +7,7 @@ PhoneBook
 	
 	And yes, the blocks are animated.
 	
-	![solarized palettes](https://github.com/rjdewberry/raw/master/images/phonebook-ss.jpg)
+	![screenshot](https://github.com/rjdewberry/raw/master/images/phonebook-ss.jpg)
 
 
 INSTALLATION
