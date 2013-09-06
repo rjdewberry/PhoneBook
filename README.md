@@ -18,3 +18,4 @@ INSTALLATION
 	copy the files to a web server with php + php-ldap installed
 	edit getnumber.php to enter your LDAP credentials and binding
 
+BTC: 1DTADBaqSsmUS68ZFdX9nfaCcHHN4tY4kd
