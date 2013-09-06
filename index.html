@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>Phonebook </title>
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ <!--[if IE]>
+<meta HTTP-EQUIV="REFRESH" content="0; url=./ie.html">
+<![endif]-->
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="./lib/style.css" charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="./lib/MetroJs.lt.css" />
+  <script type="text/javascript" src="./lib/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/activebar.js"></script>
+  <script type="text/javascript" src="./lib/MetroJs.lt.js"></script>
+
+
+<script type="text/javascript">
+function getNumber(value) {
+      $.post("getnumber.php",{partialNumber:value},function(data){
+        $("#results").html(data);
+      });
+}
+
+
+function RedirectSmartphone(url){
+    if (url && url.length > 0 && IsSmartphone())
+    window.location = url;
+}
+
+function IsSmartphone(){
+    if (DetectUagent("android")) return true;
+    else if (DetectUagent("blackberry")) return true;
+    else if (DetectUagent("iphone")) return true;
+    else if (DetectUagent("opera")) return true;
+    else if (DetectUagent("palm")) return true;
+    else if (DetectUagent("generic")) return true;
+    else if (DetectUagent("ipad")) return true;
+    else if (DetectUagent("ipod")) return true;
+    return false;
+}
+function DetectUagent(name){
+    var uagent = navigator.userAgent.toLowerCase();
+    if (uagent.search(name) > -1)
+    return true;
+    else
+    return false;
+}
+RedirectSmartphone("./mobile.html");
+</script>
+
+</head>
+
+<body>
+<div style="margin-left:auto; margin-right:auto; width:30%;">
+<a href="index.html"><img src="./images/heading.png" /></a><br />
+
+			
+<input type="text" value="enter name here" id="input" autocomplete="off" size=44 onkeyup="getNumber(this.value)" onblur="if (this.value == '') {
+           this.value = 'enter name here'; }" onfocus="if (this.value == 'enter name here') {this.value = ''; } "/>
+</div>
+    <br /><br /><br />
+		<div style=" margin-left:auto; margin-right:auto; width:31%; font-family:'droidsans'; font-size:22px;" id="results"></div>
+
+
+</div>
+
+</body>
+</html>
+

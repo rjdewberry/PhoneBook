@@ -1,0 +1,47 @@
+input { border:1px solid #8a8a8a;
+    border-radius:7px;
+    font-size:20px;
+    padding:5px;
+    color:#9a9a9a;
+    width:95%;
+	
+}
+input:focus { 
+    outline:none;
+    border-color:#dd0000;
+    box-shadow:0 0 10px #885555;
+}
+
+#clear {
+    cursor:pointer;
+    width:50px;
+    height: 40px;
+    border-radius:7px;
+	font-size:0px;
+     background: url(eraser.png) no-repeat #dd0000 center;
+    border: 1px solid #000000;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+/* Style the search button hover state */
+#clear:hover {
+    background: url(eraser.png) no-repeat center #000000;
+    border: 1px solid #000000;
+}
+.grid {
+  /*  As of August 2012, only supported in Chrome 21+ */
+	display: -webkit-flex;
+  display: flex;
+}
+.col {
+	background: #ccc;
+  padding: 30px;
+}
+.fluid {
+	flex: 1;
+}
+
+@font-face {
+        font-family: droidsans;
+        src: url('DroidSans.ttf');
+}

@@ -1,0 +1,395 @@
+input { border:1px solid #8a8a8a;
+    border-radius:7px;
+    font-size:20px;
+    padding:5px;
+	color:#9a9a9a;
+	
+}
+input:focus { 
+    outline:none;
+    border-color:#dd0000;
+    box-shadow:0 0 10px #885555;
+}
+
+#clear {
+    cursor:pointer;
+    width:50px;
+    height: 40px;
+    border-radius:7px;
+	font-size:0px;
+     background: url(eraser.png) no-repeat #dd0000 center;
+    border: 1px solid #000000;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+/* Style the search button hover state */
+#clear:hover {
+    background: url(eraser.png) no-repeat center #000000;
+    border: 1px solid #000000;
+}
+.grid {
+  /*  As of August 2012, only supported in Chrome 21+ */
+	display: -webkit-flex;
+  display: flex;
+}
+.col {
+	background: #ccc;
+  padding: 30px;
+}
+.fluid {
+	flex: 1;
+}
+
+body {
+	background:url('../images/background.jpg') fixed no-repeat right bottom;
+	margin:0;
+	padding:0;
+}
+
+/* Container */
+.modal {
+
+    /* Overlay page content */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 10000;
+
+    /* Transition opacity on open */
+    -webkit-transition: opacity 500ms ease-in;
+    -moz-transition: opacity 500ms ease-in;
+    transition: opacity 500ms ease-in;
+
+    /* Hide for now */
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Show modal */
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+    /* at time of writing (Feb 2012), pointer-events not supported by Opera or IE */
+}
+
+/* Content */
+.modal > div {
+    width: 500px;
+    background: #fff;
+    position: relative;
+    margin: 10% auto;
+
+    /* Default minimise animation */
+    -webkit-animation: minimise 500ms linear;
+    -moz-animation: minimise 500ms linear;
+
+    /* Prettify */
+    padding: 30px;
+    border-radius: 7px;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #ccc);
+    background: -webkit-linear-gradient(#fff, #ccc);
+    background: -o-linear-gradient(#fff, #ccc);
+    text-shadow: 0 1px 0 #fff;
+}
+
+/* Override animation on modal open */
+.modal:target > div {
+    -webkit-animation-name: bounce;
+    -moz-animation-name: bounce;
+}
+
+.modal h2 {
+    font-size: 36px;
+    padding: 0 0 20px;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale3d(0.1,0.1,1);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+  55% {
+    -webkit-transform: scale3d(1.08,1.08,1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95,0.95,1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+  }
+  100% {
+    -webkit-transform: scale3d(1,1,1);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+}
+
+@-webkit-keyframes minimise {
+  0% {
+    -webkit-transform: scale3d(1,1,1);
+  }
+  100% {
+    -webkit-transform: scale3d(0.1,0.1,1);
+  }
+}
+
+@-moz-keyframes bounce {
+  0% {
+    -moz-transform: scale3d(0.1,0.1,1);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+  55% {
+    -moz-transform: scale3d(1.08,1.08,1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0);
+  }
+  75% {
+    -moz-transform: scale3d(0.95,0.95,1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+  }
+  100% {
+    -moz-transform: scale3d(1,1,1);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+}
+
+@-moz-keyframes minimise {
+  0% {
+    -moz-transform: scale3d(1,1,1);
+  }
+  100% {
+    -moz-transform: scale3d(0.1,0.1,1);
+  }
+}
+
+/* Modal close link */
+.modal a[href="#close"] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: transparent;
+}
+
+/* Reset native styles */
+.modal a[href="#close"]:focus {
+    outline: none;
+}
+
+/* Create close button */
+.modal a[href="#close"]:after {
+    content: 'X';
+    display: block;
+
+    /* Position */
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 1.5em;
+    padding: 1px 1px 1px 2px;
+
+    /* Style */
+    text-decoration: none;
+    text-shadow: none;
+    text-align: center;
+    font-weight: bold;
+    background: #000;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .modal a[href="#close"]:focus:after,
+    .modal a[href="#close"]:hover:after {
+    -webkit-transform: scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+}
+
+.modal a[href="#close"]:focus:after {
+    outline: 1px solid #000;
+}
+
+/* Open modal */
+a.openModal {
+    #margin: 1em auto;
+    #display: block;
+    #width: 200px;
+    #background: #ccc;
+    #text-align: center;
+    #padding: 10px;
+    #border-radius: 7px;
+    #background: #fff;
+    #background: -moz-linear-gradient(#fff, #ddd);
+    #background: -webkit-linear-gradient(#fff, #ddd);
+    #background: -o-linear-gradient(#fff, #ddd);
+    #text-shadow: 0 1px 0 #fff;
+    #border: 1px solid rgba(0,0,0,0.1);
+    #box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+a.openModal:hover,
+a.openModal:focus {
+    background: -moz-linear-gradient(#fff, #ccc);
+    background: -webkit-linear-gradient(#fff, #ccc);
+    background: -o-linear-gradient(#fff, #ccc);
+}
+
+.menu{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+width:100%;
+}
+
+.menu ul{
+list-style:none;
+background:#2d2d2d;
+margin:0;
+padding:0;
+}
+
+.menu li{
+display:inline-block;
+float:left;
+}
+
+.menu li:first-child{
+margin-left:5px;
+}
+
+.menu a{
+display:block;
+padding:10px;
+text-decoration:none;
+color:#bbbbbb;
+border-top:2px solid transparent;
+}
+
+.menu a:hover,
+.menu li.active a{
+background:#3d3d3d;
+color:#dddddd;
+border-top:2px solid #ff4800;
+}
+
+.clearFloat{
+clear:both;
+}
+
+/* ----------- My Form ----------- */
+.myform{
+margin:0 auto;
+width:400px;
+padding:14px;
+}
+
+/* ----------- stylized ----------- */
+#stylized{
+#border:solid 2px #ff4800;
+#background:#646464;
+}
+#stylized h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+#stylized p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:10px;
+}
+#stylized label{
+display:block;
+font-weight:bold;
+text-align:right;
+width:140px;
+float:left;
+}
+#stylized .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+#stylized input{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #000000;
+width:200px;
+margin:2px 0 20px 10px;
+}
+#stylized button{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+background:#666666 url(img/button.png) no-repeat;
+text-align:center;
+line-height:31px;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+}
+
+#topbar {
+position: absolute;
+top: 0;
+left: 34%;
+width: 25%;
+height: 25px;
+line-height: 25px;
+vertical-align: middle;
+background: lightyellow;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+#topbar a {
+display: block;
+padding-left: 5px;
+height: 25px;
+line-height: 25px;
+vertical-align: middle;
+}
+
+topbar .hidden{
+visibility: hidden; 
+}
+
+ #winpop
+        {
+            width:400px; height:0px; position:absolute;
+            left:0; bottom:0px;
+padding:4px;
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 2px 2px 2px 1px;
+background-color:white;
+         }
+.titles
+         {
+             width:100%; height:20px; line-height:20px; background:#991921;
+             font-weight:bold; text-align:center; font-size:12px; color:#fff;
+border:solid;
+border-width: 1px 2px 2px 1px;
+         }
+.contents
+         {
+             font-family:Arial, Helvetica, sans-serif;width:100%; height:80px; line-height:80px;  font-size:14px; color:#000000;
+             text-align:center;
+         }
+.closes
+         {
+             position:absolute; right:7px; top:4px; color:#fff; cursor:pointer;
+         }
+         #glide{background:yellow; border:1px outset; display:none;}
+         
+@font-face {
+        font-family: droidsans;
+        src: url('DroidSans.ttf');
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>Phonebook </title>
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="./lib/style-ie.css" charset="utf-8" />
+  <link href="./lib/MetroJs.lt.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="./lib/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/MetroJs.lt.js"></script>
+  
+
+  <script type="text/javascript">
+        function getNumber(value) {
+        $.post("getnumber.php",{partialNumber:value},function(data){
+           $("#results").html(data);
+        });
+}
+
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+</script>
+</head>
+
+<body alink=#ffffff vlink=#ffffff link=#ffffff onload="init()">
+<div style="margin-left:auto; margin-right:auto; width:30%;" >
+<a class="whitelinks" href="index.html"><img src="./images/heading.png" /></a><br />
+			
+			
+<input type="text"  value="enter name here" id="input" autocomplete="off" size=44 onkeyup="getNumber(this.value)" onblur="if (this.value == '') {
+           this.value = 'enter name here'; }" onfocus="if (this.value == 'enter name here') {this.value = ''; } "/>
+</div>
+
+<br><br>
+
+		<div style="margin-left:auto; margin-right:auto; width:31%; font-family:'Verdana'; font-size:22px; display:inherit;" id="results" ></div>
+
+
+ </body>
+</html>

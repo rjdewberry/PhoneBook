@@ -1,0 +1,202 @@
+input { border:1px solid #8a8a8a;
+    border-radius:7px;
+    font-size:20px;
+    padding:5px;
+	color:#9a9a9a;
+	
+}
+input:focus { 
+    outline:none;
+    border-color:#dd0000;
+    box-shadow:0 0 10px #885555;
+}
+
+#clear {
+    cursor:pointer;
+    width:50px;
+    height: 40px;
+    border-radius:7px;
+	font-size:0px;
+     background: url(eraser.png) no-repeat #dd0000 center;
+    border: 1px solid #000000;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+/* Style the search button hover state */
+#clear:hover {
+    background: url(eraser.png) no-repeat center #000000;
+    border: 1px solid #000000;
+}
+.grid {
+  /*  As of August 2012, only supported in Chrome 21+ */
+	display: -webkit-flex;
+  display: flex;
+}
+.col {
+	background: #ccc;
+  padding: 30px;
+}
+.fluid {
+	flex: 1;
+}
+
+body {
+        background:url('../images/background.jpg') fixed no-repeat right bottom;
+        margin:0;
+        padding:0;
+}
+.menu{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+width:100%;
+}
+
+.menu ul{
+list-style:none;
+background:#2d2d2d;
+margin:0;
+padding:0;
+}
+
+.menu li{
+display:inline-block;
+float:left;
+}
+
+.menu li:first-child{
+margin-left:5px;
+}
+
+.menu a{
+display:block;
+padding:10px;
+text-decoration:none;
+color:#bbbbbb;
+border-top:2px solid transparent;
+}
+
+.menu a:hover,
+.menu li.active a{
+background:#3d3d3d;
+color:#dddddd;
+border-top:2px solid #ff4800;
+}
+
+.clearFloat{
+clear:both;
+}
+/* ----------- My Form ----------- */
+.myform{
+margin:0 400;
+width:400px;
+padding:14px;
+}
+
+/* ----------- stylized ----------- */
+#stylized{
+#border:solid 2px #ff4800;
+#background:#646464;
+}
+#stylized h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+#stylized p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:10px;
+}
+#stylized label{
+display:block;
+font-weight:bold;
+text-align:right;
+width:140px;
+float:left;
+}
+#stylized .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+#stylized input{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #000000;
+width:200px;
+margin:2px 0 20px 10px;
+}
+#stylized button{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+background:#666666 url(img/button.png) no-repeat;
+text-align:center;
+line-height:31px;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+}
+
+#topbar {
+position: absolute;
+top: 0;
+left: 34%;
+width: 25%;
+height: 25px;
+line-height: 25px;
+vertical-align: middle;
+background: lightyellow;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+#topbar a {
+display: block;
+padding-left: 5px;
+height: 25px;
+line-height: 25px;
+vertical-align: middle;
+}
+
+topbar .hidden{
+visibility: hidden;
+}
+
+ #winpop
+        {
+            width:400px; height:0px; position:absolute;
+            left:0; bottom:0px;
+padding:4px;
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 2px 2px 2px 1px;
+background-color:white;
+         }
+.titles
+         {
+             width:100%; height:20px; line-height:20px; background:#991921;
+             font-weight:bold; text-align:center; font-size:12px; color:#fff;
+border:solid;
+border-width: 1px 2px 2px 1px;
+         }
+.contents
+         {
+             font-family:Arial, Helvetica, sans-serif;width:100%; height:80px; line-height:80px;  font-size:14px; color:#000000;
+             text-align:center;
+         }
+.closes
+         {
+             position:absolute; right:7px; top:4px; color:#fff; cursor:pointer;
+         }
+         #glide{background:yellow; border:1px outset; display:none;}
+@font-face {
+        font-family: droidsans;
+        src: url('DroidSans.ttf');
+}

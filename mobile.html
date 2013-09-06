@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>Phonebook </title>
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+<meta name="viewport" content="width=device-width" />  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <link rel="stylesheet" type="text/css" href="./lib/style-mobile.css" charset="utf-8" />
+  <link href="MetroJs-mobile.lt.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="./lib/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/MetroJs.lt.js"></script>
+  <script type="text/javascript">
+        function getNumber(value) {
+        $.post("getnumber.php",{partialNumber:value},function(data){
+           $("#results").html(data);
+        });
+}
+
+</script>
+
+</script>
+</head>
+
+<body>
+<div>
+<center><a href="index.html"><img src="./images/heading.png" width=310 height=120/></a><br /></center>
+<br>		
+
+			
+<input  type="text" value="enter name here"  id="input" autocomplete="off" size=45 onkeyup="getNumber(this.value)" onblur="if (this.value == '') {
+           this.value = 'enter name here'; }" onfocus="if (this.value == 'enter name here') {this.value = ''; } "/>
+    <br /><br /><br />
+		<div style="margin-left:auto;margin-right:auto; width=100%;font-family:'droidsans'; font-size:22px;" id="results"></div>
+ </body>
+</html>
